@@ -11,7 +11,7 @@
   - [ ] 出卷
   - [ ] 解答
   - [ ] 解析
-- [ ] cheatsheet
-  - [ ] QT Creator 的必要调教
-  - [ ] CS106 库的基本内容
-  - [ ] 算法模板
+- [x] cheatsheet
+  - [x] QT Creator 的必要调教
+  - [x] CS106 库的基本内容
+  - [x] 算法模板
