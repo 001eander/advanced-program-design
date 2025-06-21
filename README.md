@@ -1,2 +1,17 @@
-# advanced-program-design
-This repo contains the assignment and notes of the course SUFE 2024 fall advaned program design.
+# 高级程序设计
+
+本仓库含有上海财经大学 2024 学年下半学期**高级程序设计**这一门课程的作业、样卷（包括解答，但是没有解析）以及笔记、cheatsheet。
+
+## TODO
+
+- [ ] 完成样卷
+  - [ ] 信管班
+  - [ ] 大数据
+- [ ] 完成模拟试题
+  - [ ] 出卷
+  - [ ] 解答
+  - [ ] 解析
+- [ ] cheatsheet
+  - [ ] QT Creator 的必要调教
+  - [ ] CS106 库的基本内容
+  - [ ] 算法模板
