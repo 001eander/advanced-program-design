@@ -5,12 +5,20 @@
 #include "console.h"
 using namespace std;
 
-Set<Vector<string>> splitsOf(const string& str){
+void dfs(const string &str, const Vector<string> &vec, Set<Vector<string>> &res)
+{
+    if (str.size() == 0)
+        res += vec;
+    else
+        for (int i = 1; i <= str.size(); ++i)
+            dfs(str.substr(i), vec + str.substr(0, i), res);
+}
 
-    (void) str; // you may delete this line
-    // Fill your code here
-
-    return {};  // you may modify this code
+Set<Vector<string>> splitsOf(const string &str)
+{
+    Set<Vector<string>> res;
+    dfs(str, {}, res);
+    return res;
 }
 
 //Output the result

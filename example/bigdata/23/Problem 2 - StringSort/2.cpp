@@ -14,12 +14,19 @@ void printMap(Map <string, int> & wordAcc);
 // Finally writes each word and its occurrence times into wordAcc.
 void wordAccount(string line, Map <string, int> & wordAcc)
 {
-     (void) line;    // you may delete this line
-     (void) wordAcc; // you may delete this line
-
-     string word;
-     // Fill your code here
-
+    string word;
+    for (size_t i = 0; i < line.size(); ++i) {
+        if (isblank(line[i])) {
+            word = Capitalize(word);
+            if (wordAcc.containsKey(word))
+                wordAcc[word]++;
+            else
+                wordAcc[word] = 1;
+            word = "";
+        } else {
+            word += line[i];
+        }
+    }
 }
 
 //Convert words to standard format with the first letter capitalized

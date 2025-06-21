@@ -17,14 +17,22 @@ struct ListNode
 
 bool separable(ListNode* list)
 {
-    (void) list;  // you may delete this line
-    // TODO
-
-    // your task is to implement this function
-
-    // fill your code here
-
-    return false; // you may delete this line
+    int s = 0;
+    for (auto p = list; p != nullptr; p = p->next)
+        s += p->data;
+    int ps = 0, cnt = 0;
+    for (auto p = list; p != nullptr; p = p->next) {
+        ps += p->data;
+        if (ps > s / 3)
+            return false;
+        if (ps == s / 3) {
+            ps = 0;
+            cnt++;
+        }
+    }
+    if (!(ps == 0 && cnt == 3))
+        return false;
+    return true;
 }
 
 ListNode* createLinkedList(const Vector<int>& source)

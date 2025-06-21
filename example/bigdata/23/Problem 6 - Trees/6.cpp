@@ -21,14 +21,32 @@ bool containsSubtree(Node * rootA, Node * rootB);
 void printTree(Node* node, string indent);
 Node* makeTree(const Vector<int>& preOrderVector, int& index);
 
+string frontOrder(Node *root)
+{
+    if (root == nullptr)
+        return "";
+    return ("0" + root->value) + frontOrder(root->left) + frontOrder(root->right);
+}
+
+string middleOrder(Node *root)
+{
+    if (root == nullptr)
+        return "";
+    return middleOrder(root->left) + ("0" + root->value) + middleOrder(root->right);
+}
+
+bool isomorphic(Node *rootA, Node *rootB)
+{
+    return frontOrder(rootA) == frontOrder(rootB) && middleOrder(rootA) == middleOrder(rootB);
+}
+
 bool containsSubtree(Node * rootA, Node * rootB)
 {
-  (void) rootA;  // you may delete this line
-  (void) rootB;  // you may delete this line
+    if (rootA == nullptr)
+        return rootB == nullptr;
 
-  // Fill and modify this code
-  return true;
-
+    return isomorphic(rootA, rootB) || containsSubtree(rootA->left, rootB)
+           || containsSubtree(rootA->right, rootB);
 }
 
 int main() {

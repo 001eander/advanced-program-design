@@ -8,14 +8,29 @@
 #include "console.h"
 using namespace std;
 
+void subsetSumHelper(const Vector<bool> &p, const Vector<int> &a, const int W, bool &res)
+{
+    if (p.size() == a.size()) {
+        int s = 0;
+        for (size_t i = 0; i != p.size(); ++i)
+            s += (p[i] ? a[i] : 0);
+
+        if (s == W)
+            res = true;
+        return;
+    }
+
+    if (!res) {
+        subsetSumHelper(p + false, a, W, res);
+        subsetSumHelper(p + true, a, W, res);
+    }
+}
+
 bool subsetSum(const Vector<int> & a, int W)
 {
-   (void) a;  // you may delete this line
-   (void) W;  // you may delete this line
-
-   // Fill and modify the code of this function
-
-   return true; // you may modify this line
+    bool res = false;
+    subsetSumHelper({}, a, W, res);
+    return res;
 }
 
 int main()
@@ -28,7 +43,7 @@ int main()
     cout << "a subset of a whose sum equals " << W << "." << endl;
 
     W = 7;
-    cout << "There is";
+    cout << "There is ";
     if (!subsetSum(a, W))
         cout << "not ";
     cout << "a subset of a whose sum equals " << W << "." << endl;

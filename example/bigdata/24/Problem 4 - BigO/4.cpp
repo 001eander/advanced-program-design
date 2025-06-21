@@ -11,7 +11,7 @@ using namespace std;
 const int MAXLENGTH = 4;
 
 // Please fill all 4 answers into BigO string array.
-static string BigO[] = {"O(N*N)", "O(N)", "O(N)", "O(logN)"};
+static string BigO[] = {"O(N*N)", "O(1)", "O(N)", "O(logN)"};
 
 int main() {
     cout<<"Problem 4 - Runtime Complexity Evaluation:" << endl<<endl;

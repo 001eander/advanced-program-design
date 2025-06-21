@@ -11,10 +11,7 @@ using namespace std;
 const int MAXLENGTH = 3;
 
 // Please fill all 3 answers into BigO string array.
-static string BigO[] = {
-                 "O(N*N*N)",      // This line is a sample string as BigO notation.
-                 "O(N*N*logN)",   // replace these strings with correct BigO notations .
-                 "O(N*N*N*logN)"};
+static string BigO[] = {"O(N)", "O(logN)", "O(1)"};
 
 int main() {
     cout<<"Problem 3 - Runtime Complexity Evaluation:" << endl<<endl;
